@@ -1,0 +1,256 @@
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+
+
+
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Contact ]*/
+
+.container-contact100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #e6f3ff;
+
+  
+}
+
+.wrap-contact100 {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 42px 55px 45px 55px;
+}
+
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.contact100-form {
+  width: 100%;
+}
+
+.contact100-form-title {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 39px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 0px;
+  margin-bottom: 17px;
+}
+
+.label-input100 {
+  font-family: Poppins-Regular;
+  font-weight:bold;
+  font-size: 15px;
+  color: #666666;
+  line-height: 3.5;
+  
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: Poppins-Medium;
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.2;
+  padding: 0px 0px 0px;
+}
+
+
+
+
+/*---------------------------------------------*/
+input.input100 {
+  height: 20px;
+  padding-top: 3px;
+  padding-bottom: 0px;
+}
+
+input.placeholder {
+  font-size: 12px;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 13px;
+}
+
+.wrap-contact100-form-btn {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.contact100-form-bgbtn {
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: #66ccff;
+
+  top: 0;
+  left: -100%;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.wrap-contact100-form-btn:hover .contact100-form-bgbtn {
+  left: 0;
+}
+
+.contact100-form-btn i {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.contact100-form-btn:hover i {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media (max-width: 576px) {
+  .wrap-contact100 {
+    padding: 72px 15px 65px 15px;
+  }
+}
+
+
+
+
+
+

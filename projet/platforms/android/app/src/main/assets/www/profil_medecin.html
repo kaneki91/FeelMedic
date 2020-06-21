@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profil docteur</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css_profile_card/main.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+
+</head>
+<style>
+    
+body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+	/*background-image: url('fond_bleu.jpg');*/
+	/*background-color: #e6ffe6;*/
+	background-color: #f2f2f2;
+}
+    
+hr {
+        /*border-radius: 5px;*/
+border-top: 2px solid #b8b894;
+}
+
+ul.a {
+  list-style-type: circle;
+  margin: 5%;
+  font-size: 15px;
+}
+
+.profile {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-top: 12%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  max-width:300px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+  width:300px;
+}
+
+}
+</style>
+
+<body>
+<div class="profile">
+	<img src="https://placeimg.com/120/120/arch" class="w3-circle" style="width:40%">
+	<h3 class="name">Dr John Kramer</h3>
+	<br>Chirurgien-Dentiste</p>
+	<p>5 rue de la Pompe</p>
+	<p>75016 Paris</p>
+	<div class="container-login100-form-btn">
+		<div class="wrap-login100-form-btn">
+			<div class="login100-form-bgbtn"></div>
+				<button class="login100-form-btn" onclick="window.location.href = 'liste_spe.html';" style="background-color:#3399ff;">
+					Prendre rendez-vous
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+ <hr>
+<p style="text-align:center; font-size:18px; font-weight:bold;"> Expertises </p>
+<ul class="a">
+  <li>Parodontie</li>
+  <li>Blanchiment des dents</li>
+  <li>Prothèse dentaire fixe ou amovible</li>
+  <li>Laser dentaire</li>
+</ul>
+<p style="text-align:center; font-size:18px; font-weight:bold;"> Moyens de paiement </p>
+<ul class="a">
+  <li>Carte bancaire</li>
+  <li>Chèque et espèces</li>
+</ul>
+</body>
+</html>

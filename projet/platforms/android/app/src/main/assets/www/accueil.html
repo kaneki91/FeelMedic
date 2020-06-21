@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="css_accueil/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+	$(document).ready(function(){
+		$(".fa-search").click(function(){
+			$(".input").toggleClass("active");
+			$("#search").toggleClass("active");
+		});
+	});
+   </script>
+  </head>
+<style>
+
+h1{
+      margin-top: -82%;
+      margin-left: 40%;
+      font-size: 22px;
+      font-weight:bold;
+      text-align: left;
+      color: #f5f5ef;
+      /*color: #f1f1f1;*/
+}
+
+p {
+      margin-top: 90%;
+      text-align: center;
+      font-family:arial, sans-serif;
+      color: #f5f5ef;
+      /*color: #f1f1f1;*/ 
+      font-size: 1em;
+      font-weight:bold;
+}
+
+.material-icons {
+        vertical-align: -14%;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #f5f5ef;
+        /*color: #f1f1f1;*/
+    }
+</style>
+  <body>
+         <h1>AlloDoc</h1>
+<i class="material-icons" onclick="window.location.href = 'login.html';">person</i>
+<p>Prenez un rendez-vous en ligne chez un professionnel de santé</p>
+<div class="wrapper">
+  <div class="btn">
+    <i class="fa fa-search" aria-hidden="true" onclick="window.location.href = 'liste_doc.html';"></i>
+  </div>
+  <div class="form">
+    <label id="search">Ex.Dentiste</label><br>
+    <input type="text" class="input">
+  </div>
+</div>
+  </body>
+</html>

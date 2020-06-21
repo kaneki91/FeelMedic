@@ -1,0 +1,19 @@
+/* CSS Layout by PUShAUNE
+http://www.pushaune.com */ 
+
+html, body, p{ /* Reset sheet */
+	margin:0; 
+	padding:0; 
+} 
+
+header{
+	padding:25px 0px;/*Marge verticale*/
+	background-color:#ff0000; /*Couleur de fond*/
+	text-align:center;/*texte centré*/
+} 
+ 
+#content{
+	background-color: #59A79A;/*Couleur de fond*/
+}
+ 
+ 

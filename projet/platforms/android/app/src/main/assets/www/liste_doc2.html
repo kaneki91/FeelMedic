@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Quelle Ville?</title>
+<title>Liste doc</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
@@ -17,7 +17,6 @@
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-	background-color: #f5f5ef;
     }
     
     hr {
@@ -38,7 +37,8 @@ border-top: 1px solid red;*/
     
     .header {
         overflow: hidden;
-        
+        /*background-image: url('fond_bleu2.jpg');*/
+        background-color:#f5f5ef;
         padding: 40px 30px;
     }
     
@@ -105,11 +105,15 @@ border-top: 1px solid red;*/
         position: absolute;
         top: 20px;
         right: 30px;
-        color: #006699;
+        color: #99ff99;
     }
     /*the container must be positioned relative:*/
     
-   
+    .autocomplete {
+        position: relative;
+        top: -52px;
+        display: inline-block;
+    }
     
     input {
         border: 1px solid transparent;
@@ -137,7 +141,7 @@ border-top: 1px solid red;*/
         height: 50px;
         width: 300px;
         /*position the autocomplete items to be the same width as the container:*/
-        top: 0px;
+        top: 110px;
         left: 0;
         right: 0;
     }
@@ -145,7 +149,7 @@ border-top: 1px solid red;*/
     .autocomplete-items div {
         padding: 10px;
         cursor: pointer;
-        background-color: #99ff99;
+        background-color: #b3d1ff;
         border-bottom: 1px solid #d4d4d4;
         height: 50px;
     }
@@ -166,24 +170,103 @@ border-top: 1px solid red;*/
 <body>
 
     <div class="header" style="height:180px; overflow: visible">
-        <p style="position:absolute; left: 140px; top: 10px; font-family: Jazz LET; font-size: 22px; font-weight: bold; color: #99ff99;">AlloDoc</p>
-        <p style="position:absolute; left: 30px; top: -20px; font-family: Jazz LET; font-size: 30px; font-weight: bold; color: #99ff99;">
+        <p style="position:absolute; left: 140px; top: 10px; font-family: Jazz LET; font-size: 22px; font-weight: bold; color: #99ff99;">FeelMedic</p>
+        <p style="position:absolute; left: 30px; top: -20px; font-family: Jazz LET; font-size: 30px; font-weight: bold; color: #99ff99;" onclick="window.location.href = 'accueil.html';">
             <</p>
                 <!--<form class="form-inline active-purple-4">-->
                
                     <div class="autocomplete">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-                        <input id="myInput" type="text" style=" border: solid #99ff99; height: 30px; margin-left:0%; margin-right:10%;" placeholder="Quelle ville?" aria-label="Search">
+                        <input id="myInput" type="text" style=" border: solid #99ff99; width: 300px;  height: 30px; display: block; margin-right: auto; margin-left: auto; position:relative; top: 115px;" placeholder="Ex. chirurgien-dentiste" aria-label="Search" onclick="window.location.href = 'where.html';">
                     </div>
-                    <a href="dentiste.html"> <i class="fas fa-search fa-1.35em" style="position:absolute; left: 305px; top: 155px; font-size:1em"></i>
+                     <i class="fas fa-search fa-1.35em" style="position:absolute; left: 305px; top: 108px; font-size:1em"></i>
+		<i class="material-icons" onclick="window.location.href = 'login.html';">person</i>
                 
 
     </div>
+   <div class="w3-cell-row">
+  <div class="w3-container w3-white w3-cell w3-mobile" style="border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-bottom-width: 1px;">
+    	<div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+        </div>
+	<div class="w3-cell w3-container">
+             <button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr John Kramer</button>
+            <p>Chirurgien-Dentiste
+                <br>75012 Paris</p>
+        </div>
+  </div>
+  <div class="w3-container w3-white w3-cell w3-mobile" style="border-bottom:groove; border-left:groove; border-right:groove;">
+    <p style="text-align: center;">Prochaine disponibilité : 9 octobre.</p>
+  </div>
+</div>
+   <div class="w3-cell-row">
+  <div class="w3-container w3-cell w3-mobile" style="background-color: #99ff99; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-bottom-width: 1px;">
+    	<div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+        </div>
+	<div class="w3-cell w3-container">
+             <button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr Henry Jekyll</button>
+            <p>Dermatologue
+                <br>75001 Paris</p>
+        </div>
+  </div>
+  <div class="w3-container w3-cell w3-mobile" style="background-color: #99ff99; border-bottom:groove; border-left:groove; border-right:groove;">
+    <p style="text-align: center;">Prochaine disponibilité : 11 octobre.</p>
+  </div>
+</div>
+   <div class="w3-cell-row">
+  <div class="w3-container w3-cell w3-mobile"style="border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-bottom-width: 1px;">
+    	<div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+        </div>
+	<div class="w3-cell w3-container">
+             <button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 21px;">Dr Hannibal Lecter</button>
+            <p>Dermatologue
+                <br>75001 Paris</p>
+        </div>
+  </div>
+  <div class="w3-container w3-cell w3-mobile" style="border-bottom:groove; border-left:groove; border-right:groove;">
+    <p style="text-align: center;">Prochaine disponibilité : 14 octobre.</p>
+  </div>
+</div>
+   <div class="w3-cell-row">
+  <div class="w3-container w3-cell w3-mobile" style="background-color: #99ff99; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-bottom-width: 1px;">
+    	<div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+        </div>
+	<div class="w3-cell w3-container">
+             <button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr J.R Hanslet</button>
+            <p>Cardiologue
+                <br>75013 Paris</p>
+        </div>
+  </div>
+  <div class="w3-container w3-cell w3-mobile" style="background-color: #99ff99; border-bottom:groove; border-left:groove; border-right:groove;" >
+    <p style="text-align: center;">Prochaine disponibilité : 17 octobre.</p>
+  </div>
+</div>
+   <div class="w3-cell-row">
+  <div class="w3-container w3-cell w3-mobile" style="border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-bottom-width: 1px;">
+    	<div class="w3-cell" style="width:30%">
+            <img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+        </div>
+	<div class="w3-cell w3-container">
+             <button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr Patrick Baan</button>
+            <p>Médecin généraliste
+                <br>75008 Paris</p>
+        </div>
+  </div>
+  <div class="w3-container w3-cell w3-mobile" style="border-bottom:groove; border-left:groove; border-right:groove;">
+    <p style="text-align: center;">Prochaine disponibilité : 21 octobre.</p>
+  </div>
+</div>
 
+    <footer>
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="https://www.w3schools.com/html/">3</a>
+        <a href="index2.html">4</a>
+        <a href="#">&raquo;</a>
+    </footer>
 
     <script>
         closeSidebar();
@@ -302,7 +385,7 @@ border-top: 1px solid red;*/
 
         /*An array containing all the country names in the world:*/
 
-        var countries = ["Angers", "Antibes", "Brest", "Calais", "Chartres", "Créteil", "Dijon", "Dunkerque", "Evian", "Fontainebleau", "Guermantes", "Hau", "Istres", "Joinville", "Lyon","Marseille","Nimes", "Orly","Paris", "Rennes", "Strasbourg", "Tours", "Valence", "Wasquehal"];
+        var countries = ["Allergologue", "Cancerologue", "Cardiologue", "Chirurgien-dentiste", "Dermatologue", "Gynécologue", "Médecin-généraliste", "Ophtalmologue", "Radiologue", "Rhumatologue"];
 
         /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
         autocomplete(document.getElementById("myInput"), countries);

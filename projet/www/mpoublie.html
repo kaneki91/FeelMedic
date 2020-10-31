@@ -34,44 +34,34 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-26" style="color:#b3b3b3; margin-bottom: 10%;">
-						Bienvenue
+						Mot de passe oublié
 					</span>	
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+			<p>Indiquez-nous l'adresse mail associée à votre compte et nous vous enverrons un lien pour le réinitialiser.</p>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c" style="position:relative; top: 5em;">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" style="margin-bottom: 20%;" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Mot de passe"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
+					<!--<div class="container-login100-form-btn" style="position:relative; top: 5em;">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" style="background-color:#99ff99; color:#b3b3b3; 								font-weight: bold;">
-								Se connecter
+							
+							<button class="login100-form-btn" onclick="window.location.href = 'horaire.html';" style="background-color:#99ff99; color:#b3b3b3;">
+								Envoyer
+							</button>
+						</div>
+					</div> -->
+
+				</form>
+<div class="container-login100-form-btn" style="position:relative; top: 5em;">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							
+							<button class="login100-form-btn" onclick="window.location.href = 'conf_mpoublie.html';" style="background-color:#99ff99; color:#b3b3b3;">
+								Envoyer
 							</button>
 						</div>
 					</div>
-
-					<div class="text-center p-t-115" style="position: relative; bottom:80px;">
-						<span class="txt1">
-							Vous n'avez pas de compte?
-						</span>
-
-						<a class="txt2" href="Formulaire/inscription_patient.html">
-							S'inscrire <br>
-						</a>
-						
-						<a class="txt2" href="mpoublie.html">
-							Mot de passe oublié <br>
-						</a>
-					</div>
-				</form>
 			</div>
 		
 	</div>

@@ -6,17 +6,19 @@
     <meta name="author" content="colorlib.com">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link href="css_accueil/main.css" rel="stylesheet" />
+    <link href="css_accueil.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css_accueil.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
+   <!-- <script>
 	$(document).ready(function(){
 		$(".fa-search").click(function(){
 			$(".input").toggleClass("active");
 			$("#search").toggleClass("active");
 		});
 	});
-   </script>
+   </script> -->
   </head>
 <style>
 
@@ -25,13 +27,13 @@ h1{
       margin-left: 40%;
       font-size: 22px;
       font-weight:bold;
-      text-align: left;
+      text-align: center;
       color: #f5f5ef;
       /*color: #f1f1f1;*/
 }
 
 p {
-      margin-top: 90%;
+      margin-top: 85%;
       text-align: center;
       font-family:arial, sans-serif;
       color: #f5f5ef;
@@ -41,26 +43,40 @@ p {
 }
 
 .material-icons {
-        vertical-align: -14%;
-        position: absolute;
-        top: 20px;
-        right: 30px;
         color: #f5f5ef;
-        /*color: #f1f1f1;*/
     }
+
 </style>
   <body>
          <h1>AlloDoc</h1>
-<i class="material-icons" onclick="window.location.href = 'login.html';">person</i>
+<i class="material-icons" onclick="window.location.href = 'login.html';" style="vertical-align : -14%; position:absolute; right: 30px; top: 20px;">person</i>
 <p>Prenez un rendez-vous en ligne chez un professionnel de santé</p>
-<div class="wrapper">
-  <div class="btn">
-    <i class="fa fa-search" aria-hidden="true" onclick="window.location.href = 'liste_doc.html';"></i>
+
+  <!--<div class="btn">
+   <i class="fa fa-search" onclick="closeNav()"></i>
+  </div>-->
+  <div class="form" style="margin-left: auto; margin-right: auto; margin-top: 4em">
+    <!--<label id="search">Ex.Dentiste</label><br>-->
+    <input type="text" class="input" value="" placeholder="Ex. Dentiste">
+    <i class="material-icons" onclick="window.location.href = 'liste_doc3_connecte.html';" style="margin-left:90%; margin-top:-12%">search</i>
   </div>
-  <div class="form">
-    <label id="search">Ex.Dentiste</label><br>
-    <input type="text" class="input">
-  </div>
-</div>
+
   </body>
+<script>
+
+/*function closeNav()
+{ 
+	var i,x,y;
+	x = document.querySelectorAll(".wrapper");
+   	y = document.querySelectorAll(".btn");
+  	for (i = 0; i < x.length; i++) {
+		y[i].style.display = "none";
+	}
+
+  var btn = document.createElement("BUTTON");
+  document.y.appendChild(btn);
+}*/
+
+</script>
+
 </html>

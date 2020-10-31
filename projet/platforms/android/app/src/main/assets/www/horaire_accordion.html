@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Horaire</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css_login/main.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!--
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		-->
+	</head>
+	<style>
+		body
+		{
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			/*background-image: url('fond_bleu.jpg');
+			*/
+			/*background-color: #f5f5ef;
+			*/
+			background-color: #f1f1f1;
+		}
+
+		p
+		{
+			margin-top: 15%;
+			text-align: center;
+			font-family:arial, sans-serif;
+			font-size: 1.3em;
+			font-weight:bold;
+		}
+
+		h1
+		{
+			font-size: 14px;
+			font-weight:bold;
+			padding: 2% 0%;
+		}
+
+		.container
+		{
+			margin-top: 15%;
+			justify-content: space-evenly;
+		}
+
+		.panel {
+  			padding: 0 18px;
+  			display: none;
+ 			 background-color: white;
+			  overflow: hidden;
+			}
+
+		.dropdown-menu
+		{
+			background-color:#11ffee00;
+			border-top: 2px solid blue;
+		}
+
+		.wrapper
+		{
+			display: grid;
+			grid-template-columns: 80px 80px 80px;
+			grid-template-rows: 40px 40px 40px;
+			grid-gap: 10px;
+			color: #444;
+			width:0px;
+		}
+
+		.box
+		{
+			background-color: #89dca4;
+			color: #003366;
+			border-radius: 5px;
+			font-size: 100%;
+			text-align: center;
+			padding:10px;
+		}
+
+		.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+		.btn btn-primary dropdown-toggle
+		{
+			background-color:#33ff33;
+		}
+
+
+	</style>
+	<body>
+		<div class="w3-container" style="background-color:#89dca4; height:10%;">
+			<h1> > Prise de rendez-vous avec <br> Dr John KRAMER</h1>
+		</div>
+		<p>
+			Choisissez une date pour le rendez-vous.
+		</p>
+		<button type="button" class="accordion">Lundi 5 mars</button>
+<div class="panel">
+  		<div class="dropdown-menu">
+			<div class="wrapper">
+				<div class="box a">
+					09:00
+				</div>
+				<div class="box b">
+					09:30
+				</div>
+				<div class="box c">
+					10:00
+				</div>
+				<div class="box d">
+					10:30
+				</div>
+				<div class="box e">
+					11:00
+				</div>
+				<div class="box f">
+					11:30
+				</div>
+				<div class="box g">
+					12:00
+				</div>
+				<div class="box a">
+					12:30
+				</div>
+				<div class="box b">
+					13:00
+				</div>
+			</div>
+		</div>
+</div>
+
+<button type="button" class="accordion">Mardi 6 mars</button>
+<div class="panel">
+  		<div class="dropdown-menu">
+			<div class="wrapper">
+				<div class="box a">
+					09:00
+				</div>
+				<div class="box b">
+					09:30
+				</div>
+				<div class="box c">
+					10:00
+				</div>
+				<div class="box d">
+					10:30
+				</div>
+				<div class="box e">
+					11:00
+				</div>
+				<div class="box f">
+					11:30
+				</div>
+				<div class="box g">
+					12:00
+				</div>
+				<div class="box a">
+					12:30
+				</div>
+				<div class="box b">
+					13:00
+				</div>
+			</div>
+		</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+	</body>
+</html>

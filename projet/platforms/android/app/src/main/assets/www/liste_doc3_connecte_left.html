@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+	<title>Liste doc left</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		
+		{
+			box-sizing: border-box;
+		}
+
+		body
+		{
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #f5f5ef;
+		}
+
+		hr
+		{
+			/*border-radius: 5px;
+			border-top: 1px solid red;
+			*/
+		}
+
+		.pagination
+		{
+			display: inline-block;
+		}
+
+		.pagination a
+		{
+			color: black;
+			float: left;
+			padding: 8px 16px;
+			text-decoration: none;
+		}
+
+		.header
+		{
+			overflow: hidden;
+			/*background-image: url('fond_bleu2.jpg');
+			*/
+			background-color:#f5f5ef;
+			padding: 40px 30px;
+		}
+
+		.header p
+		{
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.header a
+		{
+			float: left;
+			color: black;
+			text-align: center;
+			padding: 12px;
+			text-decoration: none;
+			font-size: 18px;
+			line-height: 15px;
+			border-radius: 4px;
+		}
+
+		.header .header a.logo
+		{
+			font-size: 25px;
+			font-weight: bold;
+		}
+
+		.header a:hover
+		{
+			background-color: #ddd;
+			color: black;
+		}
+
+		.header a.active
+		{
+			background-color: dodgerblue;
+			color: white;
+		}
+
+		.header-right
+		{
+			float: right;
+		}
+
+		.searchbtn
+		{
+			background: #ffec00;
+			width: 10%;
+			border-radius: 5px;
+			position: relative;
+			cursor: pointer;
+		}
+
+		.searchbtn .fas
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 18px;
+		}
+
+		/* Style the footer */
+		footer
+		{
+			background-color: #777;
+			padding: 10px;
+			text-align: center;
+			color: white;
+		}
+
+		.material-icons
+		{
+			vertical-align: -14%;
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			color: #99ff99;
+		}
+
+		/*the container must be positioned relative:*/
+		.autocomplete
+		{
+			position: relative;
+			top: -52px;
+			display: inline-block;
+		}
+
+		input
+		{
+			border: 1px solid transparent;
+			background-color: #f1f1f1;
+			padding: 10px;
+			font-size: 16px;
+		}
+
+		input[type=text]
+		{
+			background-color: #f1f1f1;
+			width: 100%;
+		}
+
+		input[type=submit]
+		{
+			background-color: DodgerBlue;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		img
+		{
+			height:45px;
+		}
+
+		.autocomplete-items
+		{
+			position: relative;
+			border: 1px solid #d4d4d4;
+			border-bottom: none;
+			border-top: none;
+			height: 50px;
+			width: 300px;
+			/*position the autocomplete items to be the same width as the container:*/
+			top: 50px;
+			left: 0;
+			right: 0;
+		}
+
+		.autocomplete-items div
+		{
+			padding: 10px;
+			cursor: pointer;
+			background-color: #99ff99;
+			border-bottom: 1px solid #d4d4d4;
+			height: 50px;
+		}
+
+		/*when hovering an item:*/
+		.autocomplete-items div:hover
+		{
+			background-color: #e9e9e9;
+		}
+
+		/*when navigating through the items using the arrow keys:*/
+		.autocomplete-active
+		{
+			background-color: DodgerBlue !important;
+			color: #ffffff;
+		}
+
+		.sidenav
+		{
+			height: 100%;
+			width: 0;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background-color: #c2c2a3;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+
+		.sidenav a
+		{
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 17px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+		}
+
+		.sidenav a:hover
+		{
+			color: #f1f1f1;
+		}
+
+		.sidenav .closebtn
+		{
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+
+		@media screen and (max-height: 450px)
+		{
+			.sidenav
+			{
+				padding-top: 15px;
+			}
+
+			.sidenav a
+			{
+				font-size: 18px;
+			}
+		}
+	</style>
+	<body>
+		<div class="header" style="height:180px; overflow: visible">
+			<p style="text-align:center; font-family: Jazz LET; font-size: 22px; font-weight: bold; color: #99ff99;">
+				FeelMedic
+			</p>
+			<!-- 
+			<p style="position:absolute; left: 30px; top: -20px; font-family: Jazz LET; font-size: 30px; font-weight: bold; color: #99ff99;" onclick="window.location.href = 'accueil.html';">
+				<
+			</p>
+			-->
+			<!--
+			<form class="form-inline active-purple-4">
+				-->
+				<div class="autocomplete">
+					<input id="myInput" type="text" style=" border: solid #99ff99; width: 300px;  height: 30px; display: block; margin-right: auto; margin-left: auto; position:relative; top: 55px;" onclick="autocomplete()" placeholder="Ex. chirurgien-dentiste" aria-label="Search">
+				</div>
+				<i class="fas fa-search fa-1.35em" onclick="window.location.href = 'where.html';" style="position:absolute; left: 305px; top: 128px; font-size:1em"></i>
+				<div id="mySidenav" class="sidenav">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position:absolute; top: 18px;">&times;</a>
+					<br>
+					<a href="#" onclick="window.location.href = 'mesinfos.html';">&#9881; &nbsp; &nbsp; Mes informations</a>
+					<a href="#" onclick="window.location.href = 'mesrdv.html';">&#x1f4c5; &nbsp; Mes rendez-vous</a>
+					<a href="#" onclick="window.location.href = 'login.html';">Se déconnecter</a>
+				</div>
+				<span style="color:#a6a6a6; font-size:30px;cursor:pointer; position:absolute; left: 5%; top:2%;" onclick="openNav()">&#9776; </span>
+			</div>
+			<br>
+			<div class="w3-cell-row" style="margin-left: auto; margin-right: auto; width:90%; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-radius:25px; background-color: #fff; border-style: solid; color: #a6a6a6">
+				<div class="w3-container w3-cell w3-mobile" ">
+					<div class="w3-cell" style="width:30%;">
+						<img class="w3-circle" id="ia" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%;">
+					</div>
+					<div class="w3-cell w3-container">
+						<button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr John Kramer</button>
+						<p style="color: black;">
+							Chirurgien-Dentiste
+							<br>
+							75012 Paris
+						</p>
+					</div>
+				</div>
+				<hr style="width:100%; border:1px solid #a6a6a6">
+					<p style="height:1.25em; text-align:center; color:black; font-weight: bold;">
+						Prochaine disponibilité : 9 octobre.
+					</p>
+			</div>
+			<br>
+			<div class="w3-cell-row" style="margin-left: auto; margin-right: auto; width:90%; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-radius:25px; background-color: #99ff99; border-style: solid;  color: #a6a6a6;">
+				<div class="w3-container w3-cell w3-mobile">
+					<div class="w3-cell" style="width:30%">
+						<img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+					</div>
+					<div class="w3-cell w3-container">
+						<button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr Henry Jekyll</button>
+						<p style="color: black;">
+							Dermatologue
+							<br>
+							75001 Paris
+						</p>
+					</div>
+				</div>
+				<hr style="width:100%; border:1px solid #a6a6a6">
+					<p style="height:1.25em; text-align:center; color:black; font-weight: bold;">
+						Prochaine disponibilité : 11 octobre.
+					</p>
+			</div>
+			<br>
+			<div class="w3-cell-row" style="margin-left: auto; margin-right: auto; width:90%; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-radius:25px; background-color: #fff; border-style: solid;">
+				<div class="w3-container w3-cell w3-mobile">
+					<div class="w3-cell" style="width:30%">
+						<img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+					</div>
+					<div class="w3-cell w3-container">
+						<button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr Abdou Ba</button>
+						<p >
+							Dermatologue
+							<br>
+							75001 Paris
+						</p>
+					</div>
+				</div>
+				<hr style="width:100%; border:1px solid #a6a6a6">
+					<p style="height:1.25em; text-align:center; color:black; font-weight: bold;">
+						Prochaine disponibilité : 11 octobre.
+					</p>
+			</div>
+			<br>
+			<div class="w3-cell-row" style="margin-left: auto; margin-right: auto; width:90%; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-radius:25px; background-color: #99ff99; border-style: solid; color: #a6a6a6;">
+				<div class="w3-container w3-cell w3-mobile">
+					<div class="w3-cell" style="width:30%">
+						<img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+					</div>
+					<div class="w3-cell w3-container">
+						<button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr John Kramer</button>
+						<p style="color:black;">
+							Dermatologue
+							<br>
+							75001 Paris
+						</p>
+					</div>
+				</div>
+				<hr style="width:100%; border:1px solid #a6a6a6">
+					<p style="height:1.25em; text-align:center; color:black; font-weight: bold;">
+						Prochaine disponibilité : 23 octobre.
+					</p>
+			</div>
+			<br>
+			<div class="w3-cell-row" style="margin-left: auto; margin-right: auto; width:90%; border-top:groove; border-left:groove; border-right:groove; border-bottom:groove; border-radius:25px; background-color: #fff; border-style: solid;">
+				<div class="w3-container w3-cell w3-mobile">
+					<div class="w3-cell" style="width:30%">
+						<img class="w3-circle" src="https://placeimg.com/120/120/animals" style="position:relative; left: 20px; top: 20px; width:65%">
+					</div>
+					<div class="w3-cell w3-container">
+						<button class="login100-form-btn" onclick="window.location.href = 'profil_medecin.html';" style="background-color:Transparent; border-style: none; font-size: 22px;">Dr Eric Baman</button>
+						<p>
+							Chirurgien-Dentiste
+							<br>
+							75012 Paris
+						</p>
+					</div>
+				</div>
+				<hr style="width:100%; border:1px solid #a6a6a6">
+					<p style="height:1.25em; text-align:center; color:black; font-weight: bold;">
+						Prochaine disponibilité : 28 octobre.
+					</p>
+			</div>
+			<br>
+			<footer>
+				<a href="#">&laquo;</a>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="https://www.w3schools.com/html/">3</a>
+				<a href="index2.html">4</a>
+				<a href="#">&raquo;</a>
+			</footer>
+			<script>
+				closeSidebar();
+				function openSidebar() {
+					document.getElementById("mySidebar").style.display = "block";
+				}
+				function closeSidebar() {
+					document.getElementById("mySidebar").style.display = "none";
+				}
+			</script>
+			<script>
+				function openNav() {
+					  document.getElementById("mySidenav").style.width = "230px";
+					  document.getElementById("ia").style.display = "none";
+					  
+						
+				}
+				function closeNav() {
+					  if ( document.getElementById("mySidenav").style.width != "0") {
+						 document.getElementById("mySidenav").style.width = "0";
+						 document.getElementById("ia").style.display = "inline";
+					}
+				}
+			</script>
+			<script>
+				function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) {
+                    return false;
+                }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("click", function(e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function(e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function(e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+
+        var countries = ["Allergologue", "Cancerologue", "Cardiologue", "Chirurgien-dentiste", "Dermatologue", "Gynécologue", "Médecin-généraliste", "Ophtalmologue", "Radiologue", "Rhumatologue"];
+
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("myInput"), countries);
+			</script>
+		</body>
+

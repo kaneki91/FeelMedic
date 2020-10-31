@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Identité du patient</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css_login/main.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<!--
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		-->
+	</head>
+	<style>
+		body
+		{
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			/*background-image: url('fond_bleu.jpg');
+			*/
+			/*background-color: #e6ffe6;
+			*/
+			background-color: #f9f9f9;
+		}
+
+		p
+		{
+			margin-top: 15%;
+			margin-left: 5%;
+			margin-right: 5%;
+			text-align: center;
+			font-family:arial, sans-serif;
+			font-size: 1.8em;
+			font-weight:bold;
+		}
+
+		.p1
+		{
+			text-align: center;
+			font-size: 1.1em;
+		}
+
+		h1
+		{
+			font-size: 14px;
+			font-weight:bold;
+			padding: 2% 0%;
+		}
+
+		.container
+		{
+			margin-top: 15%;
+		}
+
+		.btn btn-primary btn-lg btn-block
+		{
+			background-color:#f9f9f9;
+		}
+	</style>
+	<body>
+		<div class="w3-container" style="background-color:#89dca4; height:10%;">
+			<h1> > Prise de rendez-vous avec <br> Dr John KRAMER</h1>
+		</div>
+		<p>
+			Identité du patient
+		</p>
+		<p class="p1">
+			Pour qui prenez-vous ce rendez-vous ?
+		</p>
+		<br>
+		<div class="wrap-input100 input100-select" style="border-bottom: 0px;" data-validate="Name is required">
+			<input type="radio" style="margin-left: 15%;" name="type" id="monsieur" value="monsieur">
+			<label for="monsieur" style="margin-left: 15%;">Pour vous(Naji CAMARD)</label>
+			<br>
+			<br>
+			<input type="radio" style="margin-left: 15%;" name="type" id="madame" value="madame">
+			<label for="madame" style="margin-left: 25%;" >Autre personne</label>
+		</div>
+			<div class="container-login100-form-btn" style="margin-top: 95%;">
+		<div class="wrap-login100-form-btn" style="width:80%;">
+			<div class="login100-form-bgbtn"></div>
+				<button class="login100-form-btn" onclick="window.location.href = 'liste_spe.html';" style="background-color:#89dca4; color:black;">
+					Confirmer
+				</button>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
+
